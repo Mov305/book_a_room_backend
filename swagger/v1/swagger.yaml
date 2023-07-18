@@ -1,0 +1,298 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/reservations?user_id=1":
+    get:
+      summary: Get all reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: " All reservations"
+    post:
+      summary: Create a reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '201':
+          description: reservation created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                start:
+                  type: datetime
+                end:
+                  type: datetime
+                nights:
+                  type: integer
+                cost:
+                  type: decimal
+                room_id:
+                  type: integer
+                user_id:
+                  type: integer
+              required:
+              - start
+              - end
+              - nights
+              - cost
+              - room_id
+              - user_id
+  "/api/v1/reservations/{id}":
+    get:
+      summary: Get a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: reservation found
+        '404':
+          description: reservation not found
+    put:
+      summary: Update a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: reservation updated
+        '404':
+          description: reservation not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                start:
+                  type: datetime
+                end:
+                  type: datetime
+                nights:
+                  type: integer
+                cost:
+                  type: decimal
+                room_id:
+                  type: integer
+                user_id:
+                  type: integer
+              required:
+              - start
+              - end
+              - nights
+              - cost
+              - room_id
+              - user_id
+    delete:
+      summary: Delete a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: reservation deleted
+        '404':
+          description: reservation not found
+  "/api/v1/rooms":
+    get:
+      summary: Get all rooms
+      tags:
+      - Rooms
+      responses:
+        '200':
+          description: " All rooms"
+    post:
+      summary: Create a room
+      tags:
+      - Rooms
+      parameters: []
+      responses:
+        '201':
+          description: room created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                num:
+                  type: integer
+                room_type:
+                  type: string
+                night_cost:
+                  type: integer
+                image:
+                  type: string
+                booked:
+                  type: boolean
+                booked_end:
+                  type: date
+                user_id:
+                  type: integer
+              required:
+              - description
+              - num
+              - room_type
+              - night_cost
+              - image
+              - user_id
+  "/api/v1/rooms/{id}":
+    get:
+      summary: Get a room
+      tags:
+      - Rooms
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: room found
+        '404':
+          description: room not found
+    put:
+      summary: Update a room
+      tags:
+      - Rooms
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: room updated
+        '404':
+          description: room not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                num:
+                  type: integer
+                room_type:
+                  type: string
+                night_cost:
+                  type: integer
+                image:
+                  type: string
+                booked:
+                  type: boolean
+                booked_end:
+                  type: date
+                user_id:
+                  type: integer
+              required:
+              - description
+              - num
+              - room_type
+              - night_cost
+              - image
+              - user_id
+    delete:
+      summary: Delete a room
+      tags:
+      - Rooms
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: room deleted
+        '404':
+          description: room not found
+  "/users":
+    post:
+      summary: Sign-up User
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+                password_confirmation:
+                  type: string
+              required:
+              - email
+              - password
+              - password_confirmation
+  "/users/sign_in":
+    post:
+      summary: Sign-in User
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: successfuly loged in
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000

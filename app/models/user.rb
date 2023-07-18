@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :reservations
   has_many :rooms
 
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true, length: { minimum: 6 }
+
   def jwt_payload
     super
   end
