@@ -292,6 +292,10 @@ paths:
               - email
               - password
 servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: book-a-room.onrender.com
 - url: http://{defaultHost}
   variables:
     defaultHost:
