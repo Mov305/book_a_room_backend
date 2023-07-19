@@ -33,6 +33,16 @@ RSpec.configure do |config|
             },
           },
         },
+        {
+
+          url: "http://{defaultHost}",
+          variables: {
+            defaultHost: {
+              # production: 'book-a-room.onrender.com' , development : 'localhost:3000'
+              default: "localhost:3000",
+            },
+          },
+        },
       ],
     },
   }
