@@ -3,8 +3,8 @@ class Api::V1::ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    @reservations = Reservation.all
-
+    # show only reservations for the :user_id
+    @reservations = Reservation.where(user_id: params[:user_id])
     render json: @reservations
   end
 
@@ -18,7 +18,7 @@ class Api::V1::ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
 
     if @reservation.save
-      render json: @reservation, status: :created, location: @reservation
+      render json: @reservation, status: :created
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end
@@ -35,7 +35,8 @@ class Api::V1::ReservationsController < ApplicationController
 
   # DELETE /reservations/1
   def destroy
-    @reservation.destroy
+    @reservation.destroy 
+    render json: {message: "Reservation deleted"}, status: :ok
   end
 
   private

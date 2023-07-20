@@ -18,7 +18,7 @@ class Api::V1::RoomsController < ApplicationController
     @room = Room.new(room_params)
 
     if @room.save
-      render json: @room, status: :created, location: @room
+      render json: @room, status: :created
     else
       render json: @room.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class Api::V1::RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:description, :num, :type, :night_cost, :image, :booked, :booked_end)
+      params.require(:room).permit(:description, :num, :room_type, :night_cost, :image, :booked, :booked_end, :user_id)
     end
 end

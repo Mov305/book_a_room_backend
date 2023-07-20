@@ -31,8 +31,8 @@ room_seeds = [
       room_type: "Suite",
       night_cost: 300.00,
       image: "https://example.com/images/room305.jpg",
-      booked: true,
-      booked_end: "2023-07-20"
+      booked: false,
+      booked_end: nil
     },
     {
       description: "Family room with bunk beds for kids.",
@@ -45,7 +45,9 @@ room_seeds = [
     }
   ]
 
+User1 = User.create(email: "user1@gmail.com", password: "password1")
 
   room_seeds.each do |room| 
+    room.merge!(user_id: User1.id) # add user_id to each room
     Room.create(room)
   end

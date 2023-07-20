@@ -82,7 +82,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: book_room_back_production
-  username: book_room_back
-  password: <%= ENV["BOOK_ROOM_BACK_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV['DATABASE_URL'] %>

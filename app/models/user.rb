@@ -6,6 +6,10 @@ class User < ApplicationRecord
          :jwt_authenticatable, jwt_revocation_strategy: self
 
   has_many :reservations
+  has_many :rooms
+
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true, length: { minimum: 6 }
 
   def jwt_payload
     super
