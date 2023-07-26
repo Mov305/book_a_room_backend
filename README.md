@@ -22,7 +22,7 @@
 
 # react-rails <a name="react-rails"></a>
 
-> This is just an Api for a react app here is the link of the react app => [react-rails](https://github.com/Mov305/rails_react_front)
+> This is just an Api for a react app here is the link of the react app => [react-rails](https://github.com/zdnahom/book-a-room-frontend)
 
 
 ## 🛠 Built With <a name="built-with"></a>
