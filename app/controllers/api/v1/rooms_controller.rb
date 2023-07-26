@@ -36,6 +36,7 @@ class Api::V1::RoomsController < ApplicationController
   # DELETE /rooms/1
   def destroy
     @room.destroy
+    render json: {message: "Room deleted"}, status: :ok
   end
 
   private
