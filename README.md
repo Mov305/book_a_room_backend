@@ -37,9 +37,9 @@
 
 <details>
   <summary>Client</summary>
-  <ul> 
+  <ul>
     <li><a href="https://github.com/microverseinc/linters-config/tree/master/ror">Linters</a></li>
-    <li><a href="https://react.dev/">React.js</a></li>   
+    <li><a href="https://react.dev/">React.js</a></li>
   </ul>
 </details>
 <details>
@@ -77,7 +77,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```
-  git clone git@github.com:Nelitaa/react-rails.git
+  https://github.com/Mov305/book_a_room_backend.git
 ```
 
 ### Install
