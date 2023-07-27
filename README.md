@@ -4,6 +4,8 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Hello Rails React ](#-react-rails-)
+  - [🛠 Run the project locally ](#-run-the-project-locally-)
+    - [🛠 Run tests ](#-run-tests-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -24,8 +26,46 @@
 
 > This is just an Api for a react app here is the link of the react app => [react-rails](https://github.com/zdnahom/book-a-room-frontend)
 
+## 🛠 Run the project locally <a name="run-the-project-locally"></a>
+
+- Clone the project
+
+```bash
+git clone the_porject_url
+```
+
+- Install dependencies
+
+```bash
+bundle install
+```
+
+- Create the database and run migrations and seeds
+
+```bash
+rails db:create
+rails db:migrate
+rails db:seed
+```
+
+- Run the server
+
+```bash
+rails s
+```
+
+- Open the browser at `http://localhost:3000`
+
+### 🛠 Run tests <a name="run-tests"></a>
+
+- Run the tests
+
+```bash
+rake rswag
+```
 
 ## 🛠 Built With <a name="built-with"></a>
+
 <ul>
     <li>Ruby on Rails</li>
     <li>React.js</li>
