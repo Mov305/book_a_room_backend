@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2023-07-13
+  end: 2023-07-13
+  nights: 1
+  cost: 1.5
+  room: one
+  user: one
+
+two:
+  start: 2023-07-13
+  end: 2023-07-13
+  nights: 1
+  cost: 1.5
+  room: two
+  user: two
