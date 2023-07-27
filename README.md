@@ -6,6 +6,7 @@
 - [📖 Hello Rails React ](#-react-rails-)
   - [🛠 Run the project locally ](#-run-the-project-locally-)
     - [🛠 Run tests ](#-run-tests-)
+  - [📋 Kanban Board 📋](#-kanban-board-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
