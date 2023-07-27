@@ -63,6 +63,21 @@ rails s
 ```bash
 rake rswag
 ```
+## 📋 Kanban Board 📋
+
+``` There are 3 contributors for this project:```
+
+-  ### [Abdelrhman Samy Saad](https://github.com/Mov305)
+-  ### [Nicholas Amissah](https://github.com/atok624)
+-  ### [Nahom Zerihun Demissie](https://github.com/zdnahom)
+
+-  ### Here is the link to the final view Kanban board, showing the various tasks in this project [Final Kanban board](https://github.com/users/Mov305/projects/5)
+- ### Here is the link to the initial state of the Kanban board [Initial kanban board](https://user-images.githubusercontent.com/84607674/253231467-464632a5-e305-43f5-93be-7c737e54b422.PNG)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+  <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
